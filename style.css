@@ -1,4 +1,278 @@
 body {
-  background-color: #1f1e1e;
+  background-color: #181818; 
+  padding-bottom: 100%;
+  position: relative;
 }
+
+
+#navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px; /* set the height of the navigation bar */
+
+}
+
+#left-links, #right-links {
+  width: 35%; /* set the width of the left and right link divs */
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0px; /* add a left margin */
+
+}
+
+#left-links ol, #right-links ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#left-links li {
+  display: inline-block;
+  color: #9a8866;
+  width: 5%; /* Increase, or decrease horizontal spacing between top-left links */
+  margin-left: 135px; /* Increase, or decrease horizontal spacing between top-left links */
+
+}
+
+
+
+#right-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#right-links li {
+  display: inline-block;
+  color: #9a8866;
+  width: 5%;
+  margin-right: 135px;
+  float: right;
+}
+/*
+#left-links .gun-loadouts {
+  position: relative;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  width: 25px; /* add a fixed width */
+}
+
+
+
+#left-links li:nth-child(4) {
+  margin-right: 10px;
+}
+
+/*#left-links .gun-loadouts a {
+  margin-right: 10px;
+}*/
+
+/*#left-links .gun-loadouts img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}*/
+
+a { 
+  text-decoration: none; /* Remove underlines on links */
+}
+
+#image {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* align the image to the top of the div */
+  position: relative; /* add a relative position to the parent div to position the child image */
+}
+
+#image img {
+  width: 250px;
+  height: 250px;
+/*  width: 50%;*/
+  position: absolute; /* add an absolute position to the image */
+  top: -60px; /* position the image to the top of the parent div */
+}
+
+#nav-line {
+  height: 1px;
+  background-color: #CCC;
+  width: calc(100% - 400px); /* add a margin of 20px on each side */
+  position: absolute;
+  top: 180px; /* align with bottom of the image */
+  left: 200px; /* add a left margin */
+  right: 200px; /* add a right margin */
+  opacity: 0.5;
+}
+
+/* DROPDOWN MENUS */
+
+
+#trader-menu {
+  position: absolute;
+  top: 220px;
+  width: 20%;
+  left:250px;
+}
+
+#trader-menu select {
+  font-size: 20px;
+  padding: 5px 80px 5px 5px; /* add more right padding to make room for the arrow */
+  border: none;
+  border-radius: 3px;
+  background-color: #333;
+  background-position: right 10px center; /* adjust the position of the arrow */
+  color: #9a8866;
+}
+
+#trader-menu option {
+  font-size: 16px;
+  background-color: #1f1e1e;
+  color: #9a8866;
+}
+
+#item-menu {
+  position: absolute;
+  top: 220px;
+  width: 20%;
+  left:450px;
+}
+
+#item-menu select {
+  font-size: 20px;
+  padding: 5px 80px 5px 5px; /* add more right padding to make room for the arrow */
+  border: none;
+  border-radius: 3px;
+  background-color: #333;
+  background-position: right 10px center; /* adjust the position of the arrow */
+  color: #9a8866;
+}
+
+#item-menu option {
+  font-size: 16px;
+  background-color: #1f1e1e;
+  color: #9a8866;
+}
+
+
+/* SEARCH BOX */
+
+#search-box {
+  position: absolute;
+  top: 220px;
+  right: 250px;
+  display: flex;
+  align-items: center;
+}
+
+#search-box form {
+  display: flex;
+  align-items: center;
+}
+
+#search-box input[type="text"] {
+  font-size: 30px;
+  height: 45px;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  background-color: #333;
+  color: #dbdbdb;
+}
+
+
+/* TABLES */
+
+
+#table-container {
+  position: absolute;
+  left: 250px;
+  width: 76%;
+  top: 250px;
+  margin: 0 auto; /* Center the table horizontally */
+  display: flex; /* Add a flexbox container around the tables and button */
+  flex-direction: column; /* Set the flex direction to column */
+  align-items: center; /* Center the items vertically */
+}
+
+table {
+  width: 100%;
+  border-collapse: separate; /* separate the borders between the cells */
+  border-spacing: 1px; /* set the spacing between the cells */
+  margin-top: 20px;
+}
+
+td {
+  padding: 10px; /* add padding to the cell content */
+  border-radius: 5px; /* add rounded corners to the cell */
+  background-color: #202020; /* set a background color for the cell */
+  color: #b1aeae;
+  height: 80px;
+}
+
+th, td {
+  border: 2px solid #1f1e1e; /* Add a border around each cell */
+  padding: 8px; /* Add padding to each cell */
+  text-align: left;
+}
+
+th {
+  background-color: #404040; /* Add a background color to the header cells */
+  color: #c0c0c0; /* Set the text color of the header cells */
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  
+}
+
+button {
+  border: none;
+  background-color: #9a8866;
+  color: black;
+  padding: 13px 13px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+   border-radius: 5px; /* Add rounded corners */
+
+}
+  
+
+
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  margin-top: 40px;
+}
+
+
+#footer-line {
+  height: 1px;
+  background-color: #CCC;
+  width: calc(100% - 150px); /* add a margin of 20px on each side */
+  position: absolute;
+  bottom: 70; /* align with bottom of the image */
+  left: 75px; /* add a left margin */
+  right: 75px; /* add a right margin */
+  opacity: 0.1;
+
+}
+
+/* Need this shit for proper footer placement */
+body::after {
+  content: '';
+  display: block;
+  height: 50px; /* Set same as footer's height */
+}
+
+footer {
+  position:absolute;
+  color: whitesmoke;
+  bottom: 0;
+  left:400px;
+  height: 50px;
+}
+
 
