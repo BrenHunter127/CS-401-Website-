@@ -4,6 +4,9 @@ body {
   position: relative;
 }
 
+body.about {
+  padding-bottom: 0;
+}
 
 #navigation {
   display: flex;
@@ -18,8 +21,15 @@ body {
   display: flex;
   justify-content: space-between;
   margin-left: 0px; /* add a left margin */
+  color: #9a8866;
 
 }
+
+#left-links a,
+#right-links a {
+  color: #9a8866;
+}
+
 
 #left-links ol, #right-links ol {
   list-style: none;
@@ -33,10 +43,7 @@ body {
   color: #9a8866;
   width: 5%; /* Increase, or decrease horizontal spacing between top-left links */
   margin-left: 135px; /* Increase, or decrease horizontal spacing between top-left links */
-
 }
-
-
 
 #right-links {
   display: flex;
@@ -238,29 +245,27 @@ button {
 
 }
   
-
-
-
 .button-container {
   display: flex;
   justify-content: center; /* Center the button horizontally */
   margin-top: 40px;
 }
 
+/* FOOTER LINE */
 
 #footer-line {
   height: 1px;
   background-color: #CCC;
   width: calc(100% - 150px); /* add a margin of 20px on each side */
   position: absolute;
-  bottom: 70; /* align with bottom of the image */
+  bottom: -60; /* align with bottom of the image */
   left: 75px; /* add a left margin */
   right: 75px; /* add a right margin */
   opacity: 0.1;
 
 }
 
-/* Need this shit for proper footer placement */
+/* Need this shit for proper footer placement for some reason */
 body::after {
   content: '';
   display: block;
@@ -275,4 +280,174 @@ footer {
   height: 50px;
 }
 
+#footer-trademark {
+  position: absolute;
+  color: whitesmoke;
+  font-size: 12px;
+  left: 0;
+  transform: translateX(150%);
+  bottom: -120px;
+}
 
+
+#footer-copyright {
+  position:absolute;
+  color: whitesmoke;
+  bottom: 0;
+  right: 75px;
+  height: 6px;
+  font-size: 12px;
+}
+
+
+#body-paragraphs p {
+  margin-top: 200px;
+  font-size: 28;
+  color: ghostwhite;
+  text-align: center;
+  padding-left: 300px;
+  padding-right: 300px;
+
+}
+
+/* Change spacing between first and second paragraphs in About tab */
+p:last-child {
+  margin-top: 100px;
+}
+
+
+/* ABOUT TAB BOXES */
+
+#boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.box {
+  width: 450px;
+  height: 500px;
+  background-color: #181818;
+  margin: 0 50px;
+  border-radius: 5px;
+  border: 1px solid whitesmoke;
+
+}
+
+.box h1{
+  color: ghostwhite;
+  text-align: center;
+  margin-top: 5;
+  margin-bottom:0;
+}
+
+.box h2 {
+  color: ghostwhite;
+  text-align: center;
+}
+
+#map-name-top {
+  color: #9a8866;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  font-size: 24;
+}
+
+#map-names {
+  color: #9a8866;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24;
+}
+
+#map-boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom:50px;
+}
+
+
+.map-box {
+  width: 525px;
+  height: 250px;
+  background-color: #181818;
+  margin: 0 50px;
+  border-radius: 5px;
+  border: 1px solid whitesmoke;
+}
+
+#vert-line {
+  height: 770px;
+  background-color: #CCC;
+  width: 1px; 
+  position: absolute;
+  top: 250px; /* align with the top of nav-line */
+  left: 500px; /* add a left margin */
+  right: 200px; /* add a right margin */
+  opacity: 0.5;
+}
+
+#tools-desc {
+  position: absolute;
+  top: 28%;
+  color: bbb89b;
+  left: 10%;
+  background-color: none;
+  text-align: center;
+}
+
+#tools-desc h1 {
+  margin-bottom: 265px;
+}
+
+#tool-desc-boxes {
+  color: #9a8866;
+  font-size: 24px;
+  position: absolute;
+  top: 23%;
+  left: 30%
+
+}
+
+.desc-box {
+  width: 1150px;
+  height: 200px;
+  background-color: #181818;
+  border-radius: 5px;
+  border: 1px solid whitesmoke;
+  margin-bottom:100px;
+}
+
+
+#login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.box-box {
+  width: 500px;
+  height: 700px;
+  background-color: #333333;
+  margin: 0 50px;
+  border-radius: 5px;
+  border: 1px solid whitesmoke;
+
+}
+
+.box-box h1 {
+  text-align: center;
+  color: palevioletred;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
