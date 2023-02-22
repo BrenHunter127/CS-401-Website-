@@ -382,6 +382,7 @@ p:last-child {
   border: 1px solid whitesmoke;
 }
 
+
 #vert-line {
   height: 770px;
   background-color: #CCC;
@@ -423,6 +424,10 @@ p:last-child {
   border: 1px solid whitesmoke;
   margin-bottom:100px;
 }
+
+
+
+
 
 
 #login-box {
