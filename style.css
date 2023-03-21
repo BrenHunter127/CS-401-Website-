@@ -1,10 +1,37 @@
 body {
   background-color: #181818;
   position: relative;
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   min-height: 100vh; 
    padding-bottom: 70px;
+=======
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Add this line to ensure the body takes up at least the full viewport height */
+}
+  margin: 0; /* Add this line to remove default margins */
+}
+
+.page-content {
+  flex: 1; /* Make the content take up all available space, pushing the footer to the bottom */
+}
+
+
+body.about {
+  padding-bottom: 0;
+}
+
+#navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  height: 5px;
+  max-width: 100%;
+  width: auto;
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
 }
 
 .page-content {
@@ -12,7 +39,75 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+<<<<<<< HEAD
+=======
+  margin-left: 0px; /* add a left margin */
+  color: #9a8866;
+
 }
+
+#left-links a,
+#right-links a {
+  color: #9a8866;
+}
+
+
+#left-links ol, #right-links ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#left-links li {
+  display: inline-block;
+  color: #9a8866;
+  width: 5%; /* Increase, or decrease horizontal spacing between top-left links */
+  margin-left: 100px; /* Increase, or decrease horizontal spacing between top-left links */
+}
+
+#right-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#right-links li {
+  display: inline-block;
+  color: #9a8866;
+  width: 5%;
+  margin-right: 100px;
+  float: right;
+}
+
+
+#left-links li:nth-child(4) {
+  margin-right: 10px;
+}
+
+a { 
+  text-decoration: none; /* Remove underlines on links */
+}
+
+#image {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Set the aspect ratio of the image (16:9) */
+  max-width: 200px;
+}
+
+#image img {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Maintain aspect ratio of the image */
+ 
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
+}
+
 
 /* DROPDOWN MENUS */
 
@@ -53,7 +148,11 @@ body {
   display: flex;
   align-items: center;
   position: absolute;
+<<<<<<< HEAD
   top: 200px;
+=======
+  top: 220px;
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
   width: 80%; /* match the width of the table */
   left: 10%; /* match the left margin of the table */
 }
@@ -97,6 +196,7 @@ body {
 
 /* TABLES */
 
+<<<<<<< HEAD
 .main-content {
     flex: 1;
 }
@@ -112,7 +212,21 @@ body {
     align-items: center;
     margin-left: 10%;
     height: auto; /
+=======
+#table-container {
+  position: relative; /* Change from absolute to relative */
+  left: 0;
+  width: 80%;
+  top: 250px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10%;
+  height: 100%;
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
 }
+
 
 table {
   width: 100%;
@@ -170,14 +284,117 @@ button {
   display: flex;
   flex-direction: column;
    min-height: 100vh; /* Add this line to ensure the wrapper takes up at least the full viewport height */
+<<<<<<< HEAD
+=======
+}
+
+.table-loadmore-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+main {
+  flex-grow: 1;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+.content {
+  flex: 1 0 auto;
+  min-height: calc(100vh - 80px); /* Adjust this value to account for the height of the footer and any other elements you want to exclude */
+}
+
+footer {
+  width: 100%;
+  bottom: 0;
+   flex-shrink: 0; /* Add this line to prevent the footer from shrinking */
+}
+
+#footer-line {
+  height: 1px;
+  background-color: #CCC;
+  width: calc(100% - 150px); /* add a margin of 20px on each side */
+  position: absolute;
+  bottom: -60; /* align with bottom of the image */
+  left: 75px; /* add a left margin */
+  right: 75px; /* add a right margin */
+  opacity: 0.1;
+
+}
+
+#footer-trademark {
+  position: absolute;
+  color: whitesmoke;
+  font-size: 12px;
+  left: 0;
+/*  transform: translateX(150%);*/
+  left: 10%;
+  bottom: -120px;
+}
+
+#footer-copyright {
+  position:absolute;
+  color: whitesmoke;
+  bottom: 0;
+  right: 75px;
+  height: 6px;
+  font-size: 12px;
+}
+
+
+
+#body-paragraphs p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  font-size: 28;
+  color: ghostwhite;
+  text-align: center;
+  padding-left: 30%;
+  padding-right: 30%;
+
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
 }
 
 #load-more {
   margin-bottom: 40px; /* Add space between the Load More button and the footer line */
 }
 
+<<<<<<< HEAD
 .content {
   flex: 1;
+=======
+#nav-line {
+   display: flex;
+  justify-content: center;
+  height: 1px;
+  background-color: #CCC;
+  width: calc(100% - 400px); /* add a margin of 20px on each side */
+  position: absolute;
+  margin-top: 250px;
+  margin-bottom:1px;
+  left: 200px; /* add a left margin */
+  right: 200px; /* add a right margin */
+  opacity: 0.5;
+   z-index: 2; /* higher value */
+}
+
+
+/* ABOUT TAB BOXES */
+
+#boxes {
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -233,6 +450,7 @@ footer {
 }
 
 
+<<<<<<< HEAD
 #nav-line {
    display: flex;
   justify-content: center;
@@ -248,6 +466,85 @@ footer {
    z-index: 2; /* higher value */
 }
 
+=======
+/*
+
+
+#vert-line {
+  background-color: #CCC;
+  width: 1px; 
+  top: 250px; 
+  left: 500px; 
+  right: 200px; 
+}
+
+*/
+#tools-container {
+  display: flex;
+  align-items: flex-start;
+  top: 18%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width: 100%;
+  width: auto;
+  position: relative;
+  flex-wrap: wrap; /* Add this line */
+}
+
+
+#tools-desc {
+  color: bbb89b;
+  background-color: none;
+  width: 20%;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 200px;
+}
+
+
+#tools-desc h1 {
+  margin-top: 80px;
+  margin-bottom: 145px;
+}
+
+.tool-boxes {
+  position: relative;
+  padding: 20px;
+}
+
+#tools-desc-line {
+  height: 92%;
+  background-color: #CCC;
+  width: 1px;
+  position: absolute;
+  top: 0;
+  left: 30%;
+  opacity: 0.5;
+}
+
+#tool-boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #9a8866;
+  font-size: 24px;
+  height: 40%;
+  width: 30%;
+  padding-left: 20px;
+}
+
+.tool-box {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 50px;
+  background-color: #181818;
+  border-radius: 5px;
+  border: 1px solid #9a8866;
+}
+
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
 #login-box {
   display: flex;
   justify-content: center;

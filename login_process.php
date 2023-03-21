@@ -30,7 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Set session variables and redirect user to the dashboard
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
+<<<<<<< HEAD
             header("Location: index.php");
+=======
+            header("Location: dashboard.php");
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
             exit();
         } else {
             // Invalid password

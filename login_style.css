@@ -3,7 +3,10 @@ body {
     background-color: #181818;
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
 }
 
 .container {
@@ -24,7 +27,10 @@ body {
     padding: 20px;
     border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+<<<<<<< HEAD
     padding-bottom: 0;
+=======
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
 }
 
 .login-box h2 {
@@ -33,7 +39,10 @@ body {
     text-align: center;
     font-size: 24px;
     color: #ffffff;
+<<<<<<< HEAD
     
+=======
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
 }
 
 .input-group {
@@ -72,6 +81,10 @@ input[type="submit"]:hover {
     background-color: #ff3d44;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
 .create-account {
     margin-top: 15px;
     text-align: center;
@@ -87,6 +100,7 @@ input[type="submit"]:hover {
 .create-account a:hover {
     text-decoration: underline;
 }
+<<<<<<< HEAD
 
 .back-link {
     position: relative;
@@ -103,3 +117,5 @@ input[type="submit"]:hover {
     color: #ff5e62;
     text-decoration: underline;
 }
+=======
+>>>>>>> 1db26b7d539c6509752dd131b7fdf90ef57738d4
