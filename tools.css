@@ -1,0 +1,125 @@
+/* TOOLS PAGE STYLES */
+
+
+body {
+  background-color: #181818;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 70px;
+}
+
+#tools-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 100%;
+    width: auto;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.tool-wrapper {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+#tools-desc {
+    color: bbb89b;
+    background-color: none;
+    margin-left: 5%;
+    margin-right: 20px;
+    width: calc(15% - 20px);
+    word-wrap: break-word;
+    text-align: right; 
+}
+
+#tools-desc h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.tool-wrapper::before {
+    content: "";
+    height: 100%;
+    background-color: #CCC;
+    width: 1px;
+    position: absolute;
+    left: calc(25% - 20px);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.tools-desc-item h1 {
+  margin: 0; 
+}
+
+#tools-desc-line {
+  grid-column: 2; 
+  height: 92%;
+  background-color: #CCC;
+  width: 1px;
+  position: relative; 
+  top: 0;
+  left: 0; 
+  opacity: 0.5;
+}
+
+#tools-desc h1 {
+  margin-top: 80px;
+  margin-bottom: 145px;
+}
+
+.tool-box {
+    width: 60%;
+    height: 200px;
+    background-color: #181818;
+    border-radius: 5px;
+    border: 1px solid #9a8866;
+    margin-left: calc(12% + 5px);
+}
+
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 10%;
+}
+
+.footer-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3%;
+  right: 3%;
+  height: 1px;
+  background-color: whitesmoke;
+  opacity: 0.2;
+  margin-bottom: 20px;
+  z-index: -1;
+}
+
+#footer-trademark {
+  color: whitesmoke;
+  font-size: 12px;
+  grid-column: 1;
+  text-align: left;
+  padding-top: 20px;
+}
+
+#footer-copyright {
+  color: whitesmoke;
+  font-size: 12px;
+  grid-column: 2;
+  text-align: right;
+  padding-top: 20px;
+}
