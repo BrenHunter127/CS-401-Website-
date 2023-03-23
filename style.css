@@ -64,6 +64,20 @@ body {
   gap: 2px;
   flex-grow: 1; /* make the dropdown menus wrapper grow as the container shrinks */
   flex-basis: 0;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 200px;
+  width: 80%; /* match the width of the table */
+  left: 10%; /* match the left margin of the table */
+}
+
+.dropdowns-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  flex-grow: 1; /* make the dropdown menus wrapper grow as the container shrinks */
+  flex-basis: 0;
 }
 
 .dropdown-menu {
@@ -100,6 +114,9 @@ body {
 .main-content {
     flex: 1;
 }
+.main-content {
+    flex: 1;
+}
 
 #table-container {
     position: relative;
@@ -112,7 +129,18 @@ body {
     align-items: center;
     margin-left: 10%;
     height: auto; /
+    position: relative;
+    left: 0;
+    width: 80%;
+    top: 150px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10%;
+    height: auto; /
 }
+
 
 table {
   width: 100%;
@@ -171,7 +199,19 @@ button {
   flex-direction: column;
    min-height: 100vh; /* Add this line to ensure the wrapper takes up at least the full viewport height */
 }
+.main-content {
+  flex-grow: 1;
+}
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+   min-height: 100vh; /* Add this line to ensure the wrapper takes up at least the full viewport height */
+}
+
+#load-more {
+  margin-bottom: 40px; /* Add space between the Load More button and the footer line */
+}
 #load-more {
   margin-bottom: 40px; /* Add space between the Load More button and the footer line */
 }
@@ -182,8 +222,16 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
+#load-more {
+  margin-bottom: 6rem;
 #load-more {
   margin-bottom: 6rem;
 }
@@ -194,7 +242,31 @@ footer {
 
 .footer-container {
   position: absolute;
+  margin-bottom: 50px;
+} 
+
+.footer-container {
+  position: absolute;
   bottom: 0;
+  display: grid; /* Change to grid layout */
+  grid-template-columns: auto auto; /* Create two columns */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 10%; /* Add padding on left and right to keep the content within margins */
+}
+
+.footer-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3%;
+  right: 3%;
+  height: 1px;
+  background-color: whitesmoke;
+  opacity: 0.2;
+  margin-bottom: 20px;
+  z-index: -1;
   display: grid; /* Change to grid layout */
   grid-template-columns: auto auto; /* Create two columns */
   justify-content: space-between;
@@ -222,11 +294,17 @@ footer {
   grid-column: 1; /* Place in the first column */
   text-align: left; /* Align the content to the left */
   padding-top: 20px;
+  grid-column: 1; /* Place in the first column */
+  text-align: left; /* Align the content to the left */
+  padding-top: 20px;
 }
 
 #footer-copyright {
   color: whitesmoke;
   font-size: 12px;
+  grid-column: 2; /* Place in the second column */
+  text-align: right; /* Align the content to the right */
+  padding-top: 20px;
   grid-column: 2; /* Place in the second column */
   text-align: right; /* Align the content to the right */
   padding-top: 20px;
@@ -237,6 +315,7 @@ footer {
    display: flex;
   justify-content: center;
   height: 1px;
+  height: 1px;
   background-color: #CCC;
   width: calc(100% - 400px); /* add a margin of 20px on each side */
   position: absolute;
@@ -245,6 +324,7 @@ footer {
   left: 200px; /* add a left margin */
   right: 200px; /* add a right margin */
   opacity: 0.5;
+   z-index: 2; /* higher value */
    z-index: 2; /* higher value */
 }
 
