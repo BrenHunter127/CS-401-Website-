@@ -1,102 +1,20 @@
 body {
-  background-color: #181818; 
-  padding-bottom: 100%;
+  background-color: #181818;
   position: relative;
-}
-
-body.about {
-  padding-bottom: 0;
-}
-
-#navigation {
   display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+   padding-bottom: 70px;
+}
+
+.page-content {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  height: 50px; 
-
-}
-
-#left-links, #right-links {
-  width: 35%; /* set the width of the left and right link divs */
-  display: flex;
-  justify-content: space-between;
-  margin-left: 0px; /* add a left margin */
-  color: #9a8866;
-
-}
-
-#left-links a,
-#right-links a {
-  color: #9a8866;
-}
-
-
-#left-links ol, #right-links ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
-#left-links li {
-  display: inline-block;
-  color: #9a8866;
-  width: 5%; /* Increase, or decrease horizontal spacing between top-left links */
-  margin-left: 135px; /* Increase, or decrease horizontal spacing between top-left links */
-}
-
-#right-links {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-#right-links li {
-  display: inline-block;
-  color: #9a8866;
-  width: 5%;
-  margin-right: 135px;
-  float: right;
-}
-
-
-#left-links li:nth-child(4) {
-  margin-right: 10px;
-}
-
-
-a { 
-  text-decoration: none; /* Remove underlines on links */
-}
-
-#image {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* align the image to the top of the div */
-  position: relative; /* add a relative position to the parent div to position the child image */
-}
-
-#image img {
-  width: 250px;
-  height: 250px;
-/*  width: 50%;*/
-  position: absolute; /* add an absolute position to the image */
-  top: -60px; /* position the image to the top of the parent div */
-}
-
-#nav-line {
-  height: 1px;
-  background-color: #CCC;
-  width: calc(100% - 400px); /* add a margin of 20px on each side */
-  position: absolute;
-  top: 180px; /* align with bottom of the image */
-  left: 200px; /* add a left margin */
-  right: 200px; /* add a right margin */
-  opacity: 0.5;
 }
 
 /* DROPDOWN MENUS */
-
 
 #trader-menu select {
   font-size: 20px;
@@ -131,40 +49,40 @@ a {
   color: #9a8866;
 }
 
-
 #dropdown-search {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    top: 220px;
-    width: 76%;
-    margin: 0 auto;
-    left: 250px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 200px;
+  width: 80%; /* match the width of the table */
+  left: 10%; /* match the left margin of the table */
+}
+
+.dropdowns-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  flex-grow: 1; /* make the dropdown menus wrapper grow as the container shrinks */
+  flex-basis: 0;
 }
 
 .dropdown-menu {
-    display: flex;
-    flex-basis: 50%;
-    gap: 2px;
+  display: flex;
+  gap: 2px;
+  flex-grow: 1; /* make the dropdown menus grow as the wrapper shrinks */
+  flex-basis: 0;
+  max-width: 180px;
 }
 
 .dropdown-menu select {
-    width: 100%;
-}
-
-.dropdown-menu:first-child {
-    margin-right: 20px;
+  width: 100%;
 }
 
 #search-box {
-     flex: 0 0 13.33%;
-}
-
-
-#search-box form {
-  display: flex; /* add this to center the input field horizontally */
-  align-items: center;
+  flex-grow: 1; /* make the search box grow as the container shrinks */
+  flex-basis: 0;
+  margin-left: 20px; /* add some spacing between the dropdown menus and the search box */
+  max-width: 600px;
 }
 
 #search-box input[type="text"] {
@@ -177,19 +95,23 @@ a {
   width: 100%;
 }
 
-
 /* TABLES */
 
+.main-content {
+    flex: 1;
+}
 
 #table-container {
-  position: absolute;
-  left: 250px;
-  width: 76%;
-  top: 250px;
-  margin: 0 auto; /* Center the table horizontally */
-  display: flex; /* Add a flexbox container around the tables and button */
-  flex-direction: column; /* Set the flex direction to column */
-  align-items: center; /* Center the items vertically */
+    position: relative;
+    left: 0;
+    width: 80%;
+    top: 150px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10%;
+    height: auto; /
 }
 
 table {
@@ -240,180 +162,91 @@ button {
   margin-top: 40px;
 }
 
-/* FOOTER LINE */
-
-#footer-line {
-  height: 1px;
-  background-color: #CCC;
-  width: calc(100% - 150px); /* add a margin of 20px on each side */
-  position: absolute;
-  bottom: -60; /* align with bottom of the image */
-  left: 75px; /* add a left margin */
-  right: 75px; /* add a right margin */
-  opacity: 0.1;
-
+.main-content {
+  flex-grow: 1;
 }
 
-/* Need this shit for proper footer placement for some reason */
-body::after {
-  content: '';
-  display: block;
-  height: 50px; /* Set same as footer's height */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+   min-height: 100vh; /* Add this line to ensure the wrapper takes up at least the full viewport height */
+}
+
+#load-more {
+  margin-bottom: 40px; /* Add space between the Load More button and the footer line */
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#load-more {
+  margin-bottom: 6rem;
 }
 
 footer {
-  position:absolute;
-  color: whitesmoke;
+  margin-bottom: 50px;
+} 
+
+.footer-container {
+  position: absolute;
   bottom: 0;
-  left:400px;
-  height: 50px;
+  display: grid; /* Change to grid layout */
+  grid-template-columns: auto auto; /* Create two columns */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 10%; /* Add padding on left and right to keep the content within margins */
+}
+
+.footer-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3%;
+  right: 3%;
+  height: 1px;
+  background-color: whitesmoke;
+  opacity: 0.2;
+  margin-bottom: 20px;
+  z-index: -1;
 }
 
 #footer-trademark {
-  position: absolute;
   color: whitesmoke;
   font-size: 12px;
-  left: 0;
-/*  transform: translateX(150%);*/
-  left: 10%;
-  bottom: -120px;
+  grid-column: 1; /* Place in the first column */
+  text-align: left; /* Align the content to the left */
+  padding-top: 20px;
 }
 
 #footer-copyright {
-  position:absolute;
   color: whitesmoke;
-  bottom: 0;
-  right: 75px;
-  height: 6px;
   font-size: 12px;
+  grid-column: 2; /* Place in the second column */
+  text-align: right; /* Align the content to the right */
+  padding-top: 20px;
 }
 
 
-#body-paragraphs p {
-  margin-top: 200px;
-  font-size: 28;
-  color: ghostwhite;
-  text-align: center;
-  padding-left: 300px;
-  padding-right: 300px;
-
-}
-
-/* Change spacing between first and second paragraphs in About tab */
-p:last-child {
-  margin-top: 100px;
-}
-
-
-/* ABOUT TAB BOXES */
-
-#boxes {
-  display: flex;
+#nav-line {
+   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 150px;
-}
-
-.box {
-  width: 450px;
-  height: 500px;
-  background-color: #181818;
-  margin: 0 50px;
-  border-radius: 5px;
-  border: 1px solid whitesmoke;
-
-}
-
-.box h1{
-  color: ghostwhite;
-  text-align: center;
-  margin-top: 5;
-  margin-bottom:0;
-}
-
-.box h2 {
-  color: ghostwhite;
-  text-align: center;
-}
-
-#map-name-top {
-  color: #9a8866;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 150px;
-  font-size: 24;
-}
-
-#map-names {
-  color: #9a8866;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24;
-}
-
-#map-boxes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  margin-bottom:50px;
-}
-
-
-.map-box {
-  width: 525px;
-  height: 250px;
-  background-color: #181818;
-  margin: 0 50px;
-  border-radius: 5px;
-  border: 1px solid whitesmoke;
-}
-
-
-#vert-line {
-  height: 770px;
+  height: 1px;
   background-color: #CCC;
-  width: 1px; 
+  width: calc(100% - 400px); /* add a margin of 20px on each side */
   position: absolute;
-  top: 250px; /* align with the top of nav-line */
-  left: 500px; /* add a left margin */
+  margin-top: 250px;
+  margin-bottom:1px;
+  left: 200px; /* add a left margin */
   right: 200px; /* add a right margin */
   opacity: 0.5;
+   z-index: 2; /* higher value */
 }
-
-#tools-desc {
-  position: absolute;
-  top: 28%;
-  color: bbb89b;
-  left: 10%;
-  background-color: none;
-  text-align: center;
-}
-
-#tools-desc h1 {
-  margin-bottom: 265px;
-}
-
-#tool-desc-boxes {
-  color: #9a8866;
-  font-size: 24px;
-  position: absolute;
-  top: 23%;
-  left: 30%
-
-}
-
-.desc-box {
-  width: 1150px;
-  height: 200px;
-  background-color: #181818;
-  border-radius: 5px;
-  border: 1px solid whitesmoke;
-  margin-bottom:100px;
-}
-
 
 #login-box {
   display: flex;
@@ -422,22 +255,3 @@ p:last-child {
   margin-top: 150px;
 }
 
-.box-box {
-  width: 500px;
-  height: 700px;
-  background-color: #333333;
-  margin: 0 50px;
-  border-radius: 5px;
-  border: 1px solid whitesmoke;
-
-}
-
-.box-box h1 {
-  text-align: center;
-  color: palevioletred;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
