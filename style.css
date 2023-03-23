@@ -1,5 +1,9 @@
 body {
   background-color: #181818;
+<<<<<<< HEAD
+=======
+  background-color: #181818;
+>>>>>>> 0e064a83493cf29558872b11a812d05a5945408c
   position: relative;
   display: flex;
   flex-direction: column;
@@ -9,10 +13,21 @@ body {
 
 .page-content {
   flex: 5;
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+=======
+.page-content {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+>>>>>>> 0e064a83493cf29558872b11a812d05a5945408c
 
 /* DROPDOWN MENUS */
 
@@ -72,10 +87,22 @@ body {
   flex-grow: 1; /* make the dropdown menus grow as the wrapper shrinks */
   flex-basis: 0;
   max-width: 180px;
+<<<<<<< HEAD
+=======
+  display: flex;
+  gap: 2px;
+  flex-grow: 1; /* make the dropdown menus grow as the wrapper shrinks */
+  flex-basis: 0;
+  max-width: 180px;
+>>>>>>> 0e064a83493cf29558872b11a812d05a5945408c
 }
 
 .dropdown-menu select {
   width: 100%;
+<<<<<<< HEAD
+=======
+  width: 100%;
+>>>>>>> 0e064a83493cf29558872b11a812d05a5945408c
 }
 
 #search-box {
@@ -83,6 +110,13 @@ body {
   flex-basis: 0;
   margin-left: 20px; /* add some spacing between the dropdown menus and the search box */
   max-width: 600px;
+<<<<<<< HEAD
+=======
+  flex-grow: 1; /* make the search box grow as the container shrinks */
+  flex-basis: 0;
+  margin-left: 20px; /* add some spacing between the dropdown menus and the search box */
+  max-width: 600px;
+>>>>>>> 0e064a83493cf29558872b11a812d05a5945408c
 }
 
 #search-box input[type="text"] {
@@ -113,6 +147,7 @@ body {
     margin-left: 10%;
     height: auto; /
 }
+
 
 table {
   width: 100%;
@@ -233,16 +268,30 @@ footer {
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0e064a83493cf29558872b11a812d05a5945408c
 #nav-line {
    display: flex;
   justify-content: center;
   height: 1px;
   background-color: #CCC;
   width: calc(100% - 400px); /* add a margin of 20px on each side */
+<<<<<<< HEAD
+=======
+  width: calc(100% - 400px); /* add a margin of 20px on each side */
+>>>>>>> 0e064a83493cf29558872b11a812d05a5945408c
   position: absolute;
   margin-top: 250px;
   margin-bottom:1px;
   left: 200px; /* add a left margin */
+<<<<<<< HEAD
+=======
+  margin-top: 250px;
+  margin-bottom:1px;
+  left: 200px; /* add a left margin */
+>>>>>>> 0e064a83493cf29558872b11a812d05a5945408c
   right: 200px; /* add a right margin */
   opacity: 0.5;
    z-index: 2; /* higher value */
