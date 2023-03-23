@@ -1,17 +1,30 @@
 <html>
-	<head>
-		<title>CS 401 Project</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-	</head>
-	<body class="about">
-
-		<div id="login-box">
-		  <div class="box-box">
-		  	<h1>LOGIN STUFF</h1>
-		  </div>
-		</div>
-
-		
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 401 Project</title>
+    <link rel="stylesheet" href="login_style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+        </div>
+        <div class="login-box">
+            <h2>Login</h2>
+            <form action="login_process.php" method="POST">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <input type="submit" value="Login">
+            </form>
+            <p class="create-account">New here? <a href="register.html">Create an Account</a></p>
+        </div>
+    </div>
+</body>
 </html>
