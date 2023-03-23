@@ -1,5 +1,6 @@
 body {
   background-color: #181818;
+  background-color: #181818;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -9,10 +10,14 @@ body {
 
 .page-content {
   flex: 5;
+.page-content {
+  flex: 5;
   display: flex;
+  flex-direction: column;
   flex-direction: column;
   justify-content: space-between;
 }
+
 
 /* DROPDOWN MENUS */
 
@@ -72,13 +77,23 @@ body {
   flex-grow: 1; /* make the dropdown menus grow as the wrapper shrinks */
   flex-basis: 0;
   max-width: 180px;
+  display: flex;
+  gap: 2px;
+  flex-grow: 1; /* make the dropdown menus grow as the wrapper shrinks */
+  flex-basis: 0;
+  max-width: 180px;
 }
 
 .dropdown-menu select {
   width: 100%;
+  width: 100%;
 }
 
 #search-box {
+  flex-grow: 1; /* make the search box grow as the container shrinks */
+  flex-basis: 0;
+  margin-left: 20px; /* add some spacing between the dropdown menus and the search box */
+  max-width: 600px;
   flex-grow: 1; /* make the search box grow as the container shrinks */
   flex-basis: 0;
   margin-left: 20px; /* add some spacing between the dropdown menus and the search box */
@@ -113,6 +128,7 @@ body {
     margin-left: 10%;
     height: auto; /
 }
+
 
 table {
   width: 100%;
@@ -233,13 +249,18 @@ footer {
 }
 
 
+
 #nav-line {
    display: flex;
   justify-content: center;
   height: 1px;
   background-color: #CCC;
   width: calc(100% - 400px); /* add a margin of 20px on each side */
+  width: calc(100% - 400px); /* add a margin of 20px on each side */
   position: absolute;
+  margin-top: 250px;
+  margin-bottom:1px;
+  left: 200px; /* add a left margin */
   margin-top: 250px;
   margin-bottom:1px;
   left: 200px; /* add a left margin */
