@@ -14,20 +14,22 @@ session_start();
         function validateForm(e) {
             var username = document.getElementById('username');
             var password = document.getElementById('password');
-            var usernameRegex = /^[a-zA-Z0-9]+$/;
+
+            var usernameRegex = /^[a-zA-Z0-9]{3,}$/;
+            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/;
 
             if (!usernameRegex.test(username.value)) {
                 e.preventDefault();
                 username.style.borderColor = 'red';
-                alert('Username must only contain alphanumeric characters.');
+                alert('Username must be at least 3 characters long and contain only alphanumeric characters.');
             } else {
                 username.style.borderColor = '';
             }
 
-            if (password.value.length < 8) {
+            if (!passwordRegex.test(password.value)) {
                 e.preventDefault();
                 password.style.borderColor = 'red';
-                alert('Password must be at least 8 characters long.');
+                alert('Password must be at least 8 characters long, contain at least one lowercase letter, one uppercase letter, and one digit.');
             } else {
                 password.style.borderColor = '';
             }

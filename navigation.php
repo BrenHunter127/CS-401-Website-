@@ -16,7 +16,7 @@
             <li>
                 <?php
                 if (isset($_SESSION['username'])) {
-                    echo '<a href="account.php">' . $_SESSION['username'] . '</a>';
+                    echo '<a href="account.php">' . htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8') . '</a>';
                     echo '<ul id="user-dropdown" class="dropdown">';
                     echo '<li><a href="logout.php">Logout</a></li>';
                     echo '</ul>';

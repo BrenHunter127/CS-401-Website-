@@ -1,47 +1,35 @@
 <?php
-// Start a session
 session_start();
 
-// Include your database configuration file
-include('db_config.php');
+include_once('db_config.php');
+include('Dao.php');
 
-// Check if form is submitted using POST method
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    $confirm_password = filter_input(INPUT_POST, 'confirm_password', FILTER_SANITIZE_STRING);
 
-    // Perform validation checks and make sure username and email are unique, and password and confirm password match
+    // Perform additional validation checks:
+    // - make sure username and email are unique
+    // - ensure password and confirm_password match
+    // - check the length of the username, password, etc.
+    // - validate email format using FILTER_VALIDATE_EMAIL
 
     // If validation passes
-    // Hash the password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Prepare an SQL INSERT statement to add the new user
-    $query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-
-    // Prepare the query and bind the parameters
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("sss", $username, $email, $hashed_password);
-
-    // Execute the prepared statement
-    if ($stmt->execute()) {
-        // Redirect the user to the login page with a success message
+    $dao = new Dao();
+    if ($dao->registerUser($username, $email, $hashed_password)) {
         header("Location: login.html?success=account_created");
         exit();
     } else {
-        // Show an error message
         header("Location: register.html?error=account_creation_failed");
         exit();
     }
-
-    // Close the statement and connection
-    $stmt->close();
-    $conn->close();
 } else {
-    // Redirect to the registration page if not submitted via POST method
     header("Location: register.html");
     exit();
 }
+
 ?>
