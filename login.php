@@ -51,7 +51,7 @@ session_start();
                 </div>
                 <input type="submit" value="Login">
             </form>
-            <p class="create-account">New here? <a href="register.html">Create an Account</a></p>
+            <p class="create-account">New here? <a href="register.php">Create an Account</a></p>
             <a href="index.php" class="back-link">Back</a>
 
         </div>

@@ -11,19 +11,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     // Validate user credentials against your database
-    $query = "SELECT * FROM users WHERE username = ?";
+    $query = "SELECT * FROM users WHERE username = $1";
 
     // Prepare the query and bind the username parameter
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-
-    // Get the result
-    $result = $stmt->get_result();
+    $stmt = pg_prepare($conn, "login_query", $query);
+    $result = pg_execute($conn, "login_query", array($username));
 
     // Check if a user record exists
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
+    if (pg_num_rows($result) > 0) {
+        $user = pg_fetch_assoc($result);
 
         // Verify the submitted password against the stored password
         if (password_verify($password, $user['password'])) {
@@ -44,11 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Close the statement and connection
-    $stmt->close();
-    $conn->close();
+    pg_free_result($result);
+    pg_close($conn);
 } else {
     // Redirect to login page if not submitted via POST method
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 ?>
