@@ -4,6 +4,7 @@ session_start();
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,24 +19,30 @@ session_start();
             var usernameRegex = /^[a-zA-Z0-9]{3,}$/;
             var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/;
 
+            var errors = [];
+
             if (!usernameRegex.test(username.value)) {
-                e.preventDefault();
                 username.style.borderColor = 'red';
-                alert('Username must be at least 3 characters long and contain only alphanumeric characters.');
+                errors.push('Username must be at least 3 characters long and contain only alphanumeric characters.');
             } else {
                 username.style.borderColor = '';
             }
 
             if (!passwordRegex.test(password.value)) {
-                e.preventDefault();
                 password.style.borderColor = 'red';
-                alert('Password must be at least 8 characters long, contain at least one lowercase letter, one uppercase letter, and one digit.');
+                errors.push('Password must be at least 8 characters long, contain at least one lowercase letter, one uppercase letter, and one digit.');
             } else {
                 password.style.borderColor = '';
+            }
+
+            if (errors.length > 0) {
+                e.preventDefault();
+                alert(errors.join('\n'));
             }
         }
     </script>
 </head>
+
 <body>
     <div class="container">
         <div class="logo">
@@ -59,4 +66,5 @@ session_start();
         </div>
     </div>
 </body>
+
 </html>

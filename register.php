@@ -1,10 +1,10 @@
-
 <?php
 session_start();
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,46 +24,45 @@ session_start();
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/;
 
-            var validForm = true;
+            var errors = [];
 
             if (!usernameRegex.test(username.value)) {
                 username.style.borderColor = 'red';
-                alert('Username must be at least 3 characters long and contain only alphanumeric characters.');
-                validForm = false;
+                errors.push('Username must be at least 3 characters long and contain only alphanumeric characters.');
             } else {
                 username.style.borderColor = '';
             }
 
             if (!emailRegex.test(email.value)) {
                 email.style.borderColor = 'red';
-                alert('Please enter a valid email address.');
-                validForm = false;
+                errors.push('Please enter a valid email address.');
             } else {
                 email.style.borderColor = '';
             }
 
             if (!passwordRegex.test(password.value)) {
                 password.style.borderColor = 'red';
-                alert('Password must be at least 8 characters long, contain at least one lowercase letter, one uppercase letter, and one digit.');
-                validForm = false;
+                errors.push('Password must be at least 8 characters long, contain at least one lowercase letter, one uppercase letter, and one digit.');
             } else {
                 password.style.borderColor = '';
             }
 
             if (password.value !== confirmPassword.value) {
                 confirmPassword.style.borderColor = 'red';
-                alert('Passwords do not match.');
-                validForm = false;
+                errors.push('Passwords do not match.');
             } else {
                 confirmPassword.style.borderColor = '';
             }
 
-            if (validForm) {
+            if (errors.length > 0) {
+                alert(errors.join('\n'));
+            } else {
                 e.target.submit();
             }
         }
     </script>
 </head>
+
 <body>
     <div class="container">
         <div class="logo">
@@ -77,7 +76,7 @@ session_start();
                 </div>
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="text" id="email" name="email" required>
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
@@ -93,4 +92,5 @@ session_start();
         </div>
     </div>
 </body>
+
 </html>

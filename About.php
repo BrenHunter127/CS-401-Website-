@@ -3,9 +3,12 @@ session_start();
 ?>
 
 <html>
+
 <head>
 	<title>CS 401 Project</title>
 	<link rel="stylesheet" type="text/css" href="about.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 </head>
@@ -33,15 +36,20 @@ session_start();
 				<h2>Browse map layouts from above</h2>
 			</div>
 		</div>
-		
-		<div id="footer-line">	
+
+		<div id="footer-line">
 		</div>
 
 		<div class="footer-container">
 			<div id="footer-line"></div>
-			<div id="footer-trademark"><p>Game content and materials are trademarks and copyrights of HowManyRubels.com All rights reserved.</p></div>
-			<div id="footer-copyright"><p>© 2023 HowManyRubels.com</p></div>
+			<div id="footer-trademark">
+				<p>Game content and materials are trademarks and copyrights of HowManyRubels.com All rights reserved.</p>
+			</div>
+			<div id="footer-copyright">
+				<p>© 2023 HowManyRubels.com</p>
+			</div>
 		</div>
 	</div>
 </body>
+
 </html>
