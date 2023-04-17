@@ -4,8 +4,12 @@ header("Access-Control-Allow-Origin: *");
 
 $api_key = 'vkiMy0RO59DxaJSc'; // Exclusive API Key
 
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$limit = 50;
+$offset = ($page - 1) * $limit;
+
 if (isset($_GET['all'])) {
-    $url = 'https://api.tarkov-market.app/api/v1/items/all?x-api-key=' . $api_key;
+    $url = 'https://api.tarkov-market.app/api/v1/items/all?x-api-key=' . $api_key . '&limit=' . $limit . '&offset=' . $offset;
 } else {
     $query = urlencode($_GET['q']);
     $url = 'https://api.tarkov-market.app/api/v1/item?q=' . $query . '&x-api-key=' . $api_key;

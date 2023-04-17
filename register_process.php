@@ -24,11 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: login.html?success=account_created");
         exit();
     } else {
-        header("Location: register.html?error=account_creation_failed");
+        header("Location: register.php?error=account_creation_failed");
         exit();
     }
 } else {
-    header("Location: register.html");
+    header("Location: register.php");
     exit();
 }
 
