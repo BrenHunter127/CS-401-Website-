@@ -230,9 +230,10 @@ document.querySelector('#search-box input').addEventListener('keyup', debounce(a
     displayData(false, allItems.slice(0, 50));
   } else {
     const filteredItems = filterItems(allItems, currentSearchTerm);
-    displayData(false, filteredItems);
+    displayData(false, filteredItems.slice(0, 50));
   }
 }, 300));
+
 
 // Event listener for dropdown menu trader.
 document.querySelector('#trader-menu').addEventListener('change', async (event) => {
