@@ -6,11 +6,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="navigation_style.css">
+    <link rel="stylesheet" href="nav_about.css">
 </head>
 
 <body>
-<nav class="navbar-custom-font-size">
+    <nav class="navbar-custom-font-size">
         <a href="#" class="logo"><img src="logo.png" class="logo-image"></a>
         <div class="nav-links-container">
             <ul class="nav-links">

@@ -190,3 +190,25 @@ nav .nav-links li a.active:hover::before {
     }
 }
 
+.navbar-custom-font-size .nav-links li a,
+.navbar-custom-font-size .login li a {
+    font-size: 16px; /* Set the desired font size for the navigation bar */
+}
+
+/* First media query - when screen width is 1024px or less */
+@media (max-width: 1024px) {
+    .navbar-custom-font-size .nav-links li a,
+    .navbar-custom-font-size .login li a {
+        font-size: 12px; /* Adjust the font size */
+    }
+}
+
+/* Second media query - when screen width is 768px or less */
+@media (max-width: 768px) {
+    .navbar-custom-font-size .nav-links li a,
+    .navbar-custom-font-size .login li a {
+        font-size: 10px; /* Adjust the font size */
+    }
+}
+
+
