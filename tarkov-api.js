@@ -48,10 +48,8 @@ async function displayData(loadMore = false, items) {
     tbody.innerHTML = '';
   }
 
-   console.log(items);
   // Fill table body with data
-  items.forEach(item => {
-    console.log(item);
+  items.forEach((item, index) => {
       let row = document.createElement('tr');
 
     // Image column
@@ -89,6 +87,16 @@ async function displayData(loadMore = false, items) {
     profitCell.textContent = item.avg24hPrice - bestTrader.price;
     row.appendChild(profitCell);
 
+    $(row).css({
+      position: 'relative',
+      top: '50px',
+      opacity: 0
+    });
+
+    $(row).delay(50 * index).animate({
+      top: 0,
+      opacity: 1
+    }, 500);
 
     tbody.appendChild(row);
   });
@@ -230,10 +238,9 @@ document.querySelector('#search-box input').addEventListener('keyup', debounce(a
     displayData(false, allItems.slice(0, 50));
   } else {
     const filteredItems = filterItems(allItems, currentSearchTerm);
-    displayData(false, filteredItems.slice(0, 50));
+    displayData(false, filteredItems);
   }
 }, 300));
-
 
 // Event listener for dropdown menu trader.
 document.querySelector('#trader-menu').addEventListener('change', async (event) => {
