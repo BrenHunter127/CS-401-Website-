@@ -50,7 +50,7 @@ async function displayData(loadMore = false, items) {
 
   // Fill table body with data
   items.forEach((item, index) => {
-      let row = document.createElement('tr');
+    let row = document.createElement('tr');
 
     // Image column
     let imgCell = document.createElement('td');
@@ -78,8 +78,8 @@ async function displayData(loadMore = false, items) {
 
     // Sell to Flea column
     let fleaPriceCell = document.createElement('td');
-  fleaPriceCell.textContent = item.avg24hPrice;
-  row.appendChild(fleaPriceCell);
+    fleaPriceCell.textContent = item.avg24hPrice;
+    row.appendChild(fleaPriceCell);
 
 
     // Profit Column
@@ -174,7 +174,7 @@ function debounce(fn, delay) {
 }
 
 // Randomly display items from database upon loading page or page refresh.
-function shuffleItems(items) { 
+function shuffleItems(items) {
   for (let i = items.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [items[i], items[j]] = [items[j], items[i]];

@@ -26,17 +26,18 @@ body {
     align-items: center;
 }
 
-.profile, .game-stats {
+.profile,
+.game-stats {
     background-color: #333333;
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
-.profile-picture {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+.avatar {
+    width: 100px;
+    height: 100px;
+    background-color: #555555;
     border-radius: 50%;
     display: block;
     margin: 0 auto 20px;
@@ -48,7 +49,8 @@ h2 {
     text-align: center;
 }
 
-p, li {
+p,
+li {
     font-size: 1rem;
     margin-bottom: 10px;
 }

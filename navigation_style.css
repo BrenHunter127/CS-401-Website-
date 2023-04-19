@@ -9,21 +9,24 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #1a1a1a;
+    background-color: #1e1e1e;
     position: relative;
 }
 
 .logo-image {
-    width: 45px; /* Adjust this value according to the desired width */
+    width: 45px;
+    /* Adjust this value according to the desired width */
     height: auto;
 }
 
 nav .nav-links {
     display: flex;
-    justify-content: center; /* Modify this line */
+    justify-content: center;
+    /* Modify this line */
     align-items: center;
     list-style-type: none;
-    flex-grow: 1; /* Add this line */
+    flex-grow: 1;
+    /* Add this line */
 }
 
 nav .nav-links li a {
@@ -68,8 +71,10 @@ nav .nav-links li:hover .dropdown {
 nav .nav-links li .dropdown {
     display: none;
     position: absolute;
-    left: 50%; /* Center the dropdown menu */
-    transform: translateX(-50%); /* Center the dropdown menu */
+    left: 50%;
+    /* Center the dropdown menu */
+    transform: translateX(-50%);
+    /* Center the dropdown menu */
     background-color: #1a1a1a;
     min-width: 150px;
     padding: 10px 0;
@@ -137,8 +142,10 @@ nav .login li:hover .dropdown {
 nav .login li .dropdown {
     display: none;
     position: absolute;
-    left: 50%; /* Center the dropdown menu */
-    transform: translateX(-50%); /* Center the dropdown menu */
+    left: 50%;
+    /* Center the dropdown menu */
+    transform: translateX(-50%);
+    /* Center the dropdown menu */
     background-color: #1a1a1a;
     min-width: 150px;
     padding: 10px 0;
@@ -178,15 +185,17 @@ nav .nav-links li a.active:hover::before {
 
 @media (max-width: 768px) {
     nav {
-        padding: 15px 20px; /* Reduce the padding */
+        padding: 15px 20px;
+        /* Reduce the padding */
     }
 
     nav .nav-links li {
-        margin-right: 10px; /* Adjust the margin between the links */
+        margin-right: 10px;
+        /* Adjust the margin between the links */
     }
 
     nav .login li {
-        margin-left: 10px; /* Adjust the margin-left for the login link */
+        margin-left: 10px;
+        /* Adjust the margin-left for the login link */
     }
 }
-

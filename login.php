@@ -12,35 +12,81 @@ session_start();
     <link rel="stylesheet" href="login_style.css">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <script>
+        function displayErrorPopup(message) {
+            const popup = document.createElement('div');
+            popup.textContent = message;
+            popup.className = 'error-popup';
+            document.body.appendChild(popup);
+
+            setTimeout(() => {
+                popup.classList.add('fade-out');
+                setTimeout(() => {
+                    popup.remove();
+                }, 500);
+            }, 4500);
+        }
+
+
         function validateForm(e) {
-            var username = document.getElementById('username');
-            var password = document.getElementById('password');
+            e.preventDefault();
 
-            var usernameRegex = /^[a-zA-Z0-9]{3,}$/;
-            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/;
+            let username = document.getElementById('username');
+            let password = document.getElementById('password');
+            let usernameError = document.getElementById('username-error');
+            let passwordError = document.getElementById('password-error');
 
-            var errors = [];
+            let usernameRegex = /^[a-zA-Z0-9]{3,}$/;
+            let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/;
+
+            let hasError = false;
 
             if (!usernameRegex.test(username.value)) {
-                username.style.borderColor = 'red';
-                errors.push('Username must be at least 3 characters long and contain only alphanumeric characters.');
+                username.classList.add('input-error');
+                usernameError.textContent = 'Username must be at least 3 characters long and contain only alphanumeric characters.';
+                usernameError.style.display = 'block';
+                hasError = true;
             } else {
-                username.style.borderColor = '';
+                username.classList.remove('input-error');
+                usernameError.style.display = 'none';
             }
 
             if (!passwordRegex.test(password.value)) {
-                password.style.borderColor = 'red';
-                errors.push('Password must be at least 8 characters long, contain at least one lowercase letter, one uppercase letter, and one digit.');
+                password.classList.add('input-error');
+                passwordError.textContent = 'Password must be at least 8 characters long, contain at least one lowercase letter, one uppercase letter, and one digit.';
+                passwordError.style.display = 'block';
+                hasError = true;
             } else {
-                password.style.borderColor = '';
+                password.classList.remove('input-error');
+                passwordError.style.display = 'none';
             }
 
-            if (errors.length > 0) {
-                e.preventDefault();
-                alert(errors.join('\n'));
+            if (hasError) {
+                return;
             }
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "login_process.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function() {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    let response = JSON.parse(this.responseText);
+
+                    if (response.success) {
+                        window.location.href = "index.php";
+                    } else {
+                        const loginBox = document.querySelector('.login-box');
+                        loginBox.classList.add('error');
+                        displayErrorPopup(response.error);
+                    }
+                }
+            }
+
+            xhr.send("username=" + encodeURIComponent(username.value) + "&password=" + encodeURIComponent(password.value));
         }
     </script>
+
+
 </head>
 
 <body>
@@ -53,11 +99,14 @@ session_start();
                 <div class="input-group">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" required>
+                    <span id="username-error" class="error-message"></span>
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
+                    <span id="password-error" class="error-message"></span>
                 </div>
+
                 <input type="submit" value="Login">
             </form>
             <p class="create-account">New here? <a href="register.php">Create an Account</a></p>

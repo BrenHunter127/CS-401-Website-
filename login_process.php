@@ -21,16 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: index.php");
             exit();
         } else {
-            header("Location: login.html?error=invalid_password");
+            header("Location: login.php?error=invalid_password");
             exit();
         }
     } else {
-        header("Location: login.html?error=user_not_found");
+        header("Location: login.php?error=user_not_found");
         exit();
     }
 } else {
     header("Location: login.php");
     exit();
 }
-
-?>
