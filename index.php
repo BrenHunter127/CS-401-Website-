@@ -3,11 +3,15 @@ session_start();
 ?>
 
 <html>
+
 <head>
 	<title>CS 401 Project</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700&display=swap" />
+
 </head>
+
 <body>
 
 	<?php include 'navigation.php'; ?>
@@ -16,16 +20,16 @@ session_start();
 		<div class="dropdowns-wrapper">
 			<div id="trader-menu" class="dropdown-menu">
 				<select>
-				  <option value="">Trader</option>
-				  <option value="Prapor">Prapor</option>
-				  <option value="Therapist">Therapist</option>
-				  <option value="Fence">Fence</option>
-				  <option value="Skier">Skier</option>
-				  <option value="Peacekeeper">Peacekeeper</option>
-				  <option value="Mechanic">Mechanic</option>
-				  <option value="Ragman">Ragman</option>
-				  <option value="Jaeger">Jaeger</option>
-				  <option value="The Punisher">The Punisher</option>
+					<option value="">Trader</option>
+					<option value="Prapor">Prapor</option>
+					<option value="Therapist">Therapist</option>
+					<option value="Fence">Fence</option>
+					<option value="Skier">Skier</option>
+					<option value="Peacekeeper">Peacekeeper</option>
+					<option value="Mechanic">Mechanic</option>
+					<option value="Ragman">Ragman</option>
+					<option value="Jaeger">Jaeger</option>
+					<option value="The Punisher">The Punisher</option>
 				</select>
 			</div>
 			<div id="item-menu" class="dropdown-menu">
@@ -51,7 +55,7 @@ session_start();
 			</div>
 		</div>
 		<div id="search-box">
-				<input type="text" placeholder="Search item..." />
+			<input type="text" placeholder="Search item..." />
 		</div>
 	</div>
 	<div class="main-content">
@@ -71,21 +75,24 @@ session_start();
 
 				</tbody>
 			</table>
-				<div class="content">
-			      <button id="load-more">Load More</button>
-			    </div>
-				<div class="footer-container">
-					<div id="footer-line"></div>
-					<div id="footer-trademark"><p>Game content and materials are trademarks and copyrights of HowManyRubels.com All rights reserved.</p></div>
-					<div id="footer-copyright"><p>© 2023 HowManyRubels.com</p></div>
+			<div class="content">
+				<button id="load-more">Load More</button>
+			</div>
+			<div class="footer-container">
+				<div id="footer-line"></div>
+				<div id="footer-trademark">
+					<p>Game content and materials are trademarks and copyrights of HowManyRubels.com All rights reserved.</p>
 				</div>
+				<div id="footer-copyright">
+					<p>© 2023 HowManyRubels.com</p>
+				</div>
+			</div>
 		</div>
 
 	</div>
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="tarkov-api.js"></script>
 </body>
+
 </html>
-
-
-

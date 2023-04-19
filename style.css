@@ -3,8 +3,11 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
-   padding-bottom: 70px;
+  min-height: 100vh;
+  padding-bottom: 70px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
 }
 
 .page-content {
@@ -18,11 +21,13 @@ body {
 
 #trader-menu select {
   font-size: 20px;
-  padding: 5px 80px 5px 5px; /* add more right padding to make room for the arrow */
+  padding: 5px 80px 5px 5px;
+  /* add more right padding to make room for the arrow */
   border: none;
   border-radius: 3px;
   background-color: #333;
-  background-position: right 10px center; /* adjust the position of the arrow */
+  background-position: right 10px center;
+  /* adjust the position of the arrow */
   color: #9a8866;
 }
 
@@ -35,11 +40,13 @@ body {
 
 #item-menu select {
   font-size: 20px;
-  padding: 5px 80px 5px 5px; /* add more right padding to make room for the arrow */
+  padding: 5px 80px 5px 5px;
+  /* add more right padding to make room for the arrow */
   border: none;
   border-radius: 3px;
   background-color: #333;
-  background-position: right 10px center; /* adjust the position of the arrow */
+  background-position: right 10px center;
+  /* adjust the position of the arrow */
   color: #9a8866;
 }
 
@@ -54,22 +61,26 @@ body {
   align-items: center;
   position: absolute;
   top: 200px;
-  width: 80%; /* match the width of the table */
-  left: 10%; /* match the left margin of the table */
+  width: 80%;
+  /* match the width of the table */
+  left: 10%;
+  /* match the left margin of the table */
 }
 
 .dropdowns-wrapper {
   display: flex;
   flex-wrap: nowrap;
   gap: 2px;
-  flex-grow: 1; /* make the dropdown menus wrapper grow as the container shrinks */
+  flex-grow: 1;
+  /* make the dropdown menus wrapper grow as the container shrinks */
   flex-basis: 0;
 }
 
 .dropdown-menu {
   display: flex;
   gap: 2px;
-  flex-grow: 1; /* make the dropdown menus grow as the wrapper shrinks */
+  flex-grow: 1;
+  /* make the dropdown menus grow as the wrapper shrinks */
   flex-basis: 0;
   max-width: 180px;
 }
@@ -79,9 +90,11 @@ body {
 }
 
 #search-box {
-  flex-grow: 1; /* make the search box grow as the container shrinks */
+  flex-grow: 1;
+  /* make the search box grow as the container shrinks */
   flex-basis: 0;
-  margin-left: 20px; /* add some spacing between the dropdown menus and the search box */
+  margin-left: 20px;
+  /* add some spacing between the dropdown menus and the search box */
   max-width: 600px;
 }
 
@@ -98,50 +111,61 @@ body {
 /* TABLES */
 
 .main-content {
-    flex: 1;
+  flex: 1;
 }
 
 #table-container {
-    position: relative;
-    left: 0;
-    width: 80%;
-    top: 150px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 10%;
-    height: auto; /
+  position: relative;
+  left: 0;
+  width: 80%;
+  top: 150px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10%;
+  height: auto;
 }
 
 table {
   width: 100%;
-  border-collapse: separate; /* separate the borders between the cells */
-  border-spacing: 1px; /* set the spacing between the cells */
+  border-collapse: separate;
+  /* separate the borders between the cells */
+  border-spacing: 1px;
+  /* set the spacing between the cells */
   margin-top: 20px;
 }
 
 td {
-  padding: 10px; /* add padding to the cell content */
-  border-radius: 5px; /* add rounded corners to the cell */
-  background-color: #202020; /* set a background color for the cell */
+  padding: 10px;
+  /* add padding to the cell content */
+  border-radius: 5px;
+  /* add rounded corners to the cell */
+  background-color: #202020;
+  /* set a background color for the cell */
   color: #b1aeae;
   height: 80px;
+  text-align: center;
 }
 
-th, td {
-  border: 2px solid #1f1e1e; /* Add a border around each cell */
-  padding: 8px; /* Add padding to each cell */
+th,
+td {
+  border: 2px solid #1f1e1e;
+  /* Add a border around each cell */
+  padding: 8px;
+  /* Add padding to each cell */
   text-align: left;
 }
 
 th {
-  background-color: #404040; /* Add a background color to the header cells */
-  color: #c0c0c0; /* Set the text color of the header cells */
+  background-color: #404040;
+  /* Add a background color to the header cells */
+  color: #c0c0c0;
+  /* Set the text color of the header cells */
   height: 50px;
   font-size: 20px;
   text-align: center;
-  
+
 }
 
 button {
@@ -152,14 +176,16 @@ button {
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
-   border-radius: 5px; /* Add rounded corners */
+  border-radius: 5px;
+  /* Add rounded corners */
 
 }
-  
+
 .button-container {
   display: flex;
-  justify-content: center; /* Center the button horizontally */
-  margin-top: 40px;
+  justify-content: center;
+  /* Center the button horizontally */
+  margin-top: 60px;
 }
 
 .main-content {
@@ -169,11 +195,14 @@ button {
 .wrapper {
   display: flex;
   flex-direction: column;
-   min-height: 100vh; /* Add this line to ensure the wrapper takes up at least the full viewport height */
+  min-height: 100vh;
+  /* Add this line to ensure the wrapper takes up at least the full viewport height */
 }
 
 #load-more {
-  margin-bottom: 40px; /* Add space between the Load More button and the footer line */
+  margin-top: 20px;
+  margin-bottom: 40px;
+  /* Add space between the Load More button and the footer line */
 }
 
 .content {
@@ -182,6 +211,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 #load-more {
@@ -190,17 +220,20 @@ button {
 
 footer {
   margin-bottom: 50px;
-} 
+}
 
 .footer-container {
   position: absolute;
   bottom: 0;
-  display: grid; /* Change to grid layout */
-  grid-template-columns: auto auto; /* Create two columns */
+  display: grid;
+  /* Change to grid layout */
+  grid-template-columns: auto auto;
+  /* Create two columns */
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 10%; /* Add padding on left and right to keep the content within margins */
+  padding: 0 10%;
+  /* Add padding on left and right to keep the content within margins */
 }
 
 .footer-container::before {
@@ -219,33 +252,47 @@ footer {
 #footer-trademark {
   color: whitesmoke;
   font-size: 12px;
-  grid-column: 1; /* Place in the first column */
-  text-align: left; /* Align the content to the left */
+  grid-column: 1;
+  /* Place in the first column */
+  text-align: left;
+  /* Align the content to the left */
   padding-top: 20px;
 }
 
 #footer-copyright {
   color: whitesmoke;
   font-size: 12px;
-  grid-column: 2; /* Place in the second column */
-  text-align: right; /* Align the content to the right */
+  grid-column: 2;
+  /* Place in the second column */
+  text-align: right;
+  /* Align the content to the right */
   padding-top: 20px;
 }
 
+#footer-trademark,
+#footer-copyright {
+  color: #c0c0c0;
+}
+
+
 
 #nav-line {
-   display: flex;
+  display: flex;
   justify-content: center;
   height: 1px;
   background-color: #CCC;
-  width: calc(100% - 400px); /* add a margin of 20px on each side */
+  width: calc(100% - 400px);
+  /* add a margin of 20px on each side */
   position: absolute;
   margin-top: 250px;
-  margin-bottom:1px;
-  left: 200px; /* add a left margin */
-  right: 200px; /* add a right margin */
+  margin-bottom: 1px;
+  left: 200px;
+  /* add a left margin */
+  right: 200px;
+  /* add a right margin */
   opacity: 0.5;
-   z-index: 2; /* higher value */
+  z-index: 2;
+  /* higher value */
 }
 
 #login-box {
@@ -255,3 +302,66 @@ footer {
   margin-top: 150px;
 }
 
+
+.expanded {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.additional-info {
+  background-color: #f9f9f9;
+}
+
+
+tbody td:nth-child(3),
+tbody td:nth-child(4),
+tbody td:nth-child(5) {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+button:hover {
+  background-color: #bba577;
+  transition: background-color 0.3s ease;
+}
+
+button {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:focus {
+  background-color: #b39b72;
+  color: #181818;
+  outline: none;
+  /* Remove the default focus outline */
+}
+
+
+
+tr:hover {
+  background-color: #292929;
+  transition: background-color 0.3s ease;
+}
+
+
+#trader-menu select:hover,
+#item-menu select:hover {
+  background-color: #4a4a4a;
+  transition: background-color 0.3s ease;
+}
+
+#search-box input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+tr:nth-child(even) {
+  background-color: #282828;
+}
+
+#trader-menu select,
+#item-menu select,
+#search-box input[type="text"] {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

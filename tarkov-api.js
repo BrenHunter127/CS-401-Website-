@@ -73,18 +73,24 @@ async function displayData(loadMore = false, items) {
     const bestTrader = findBestTrader(item);
     // Sell to Trader column
     let traderPriceCell = document.createElement('td');
-    traderPriceCell.textContent = bestTrader.price;
+    traderPriceCell.textContent = `${bestTrader.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`;
+
+
     row.appendChild(traderPriceCell);
 
     // Sell to Flea column
     let fleaPriceCell = document.createElement('td');
-    fleaPriceCell.textContent = item.avg24hPrice;
+    fleaPriceCell.textContent = `${item.avg24hPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`;
+
+
     row.appendChild(fleaPriceCell);
 
 
     // Profit Column
     let profitCell = document.createElement('td');
-    profitCell.textContent = item.avg24hPrice - bestTrader.price;
+    profitCell.textContent = `${(item.avg24hPrice - bestTrader.price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽`;
+
+
     row.appendChild(profitCell);
 
     $(row).css({
