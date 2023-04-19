@@ -64,25 +64,27 @@ session_start();
                 return;
             }
 
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "login_process.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            const formData = new FormData();
+            formData.append('username', username.value);
+            formData.append('password', password.value);
 
-            xhr.onreadystatechange = function() {
-                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                    let response = JSON.parse(this.responseText);
-
-                    if (response.success) {
-                        window.location.href = "index.php";
+            fetch('login_process.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        window.location.href = 'index.php';
                     } else {
-                        const loginBox = document.querySelector('.login-box');
-                        loginBox.classList.add('error');
-                        displayErrorPopup(response.error);
+                        displayErrorPopup(data.error);
                     }
-                }
-            }
+                })
 
-            xhr.send("username=" + encodeURIComponent(username.value) + "&password=" + encodeURIComponent(password.value));
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while logging in. Please try again.');
+                });
         }
     </script>
 
