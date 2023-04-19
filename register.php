@@ -26,6 +26,7 @@ session_start();
 
             const errors = [];
 
+
             if (!usernameRegex.test(username.value)) {
                 username.style.borderColor = 'red';
                 errors.push('Username must be at least 3 characters long and contain only alphanumeric characters.');
@@ -69,6 +70,9 @@ session_start();
         </div>
         <div class="login-box">
             <h2>Create Account</h2>
+            <?php if (isset($_GET['error']) && $_GET['error'] == 'username_exists') : ?>
+                <p class="error">The username already exists. Please choose a different username.</p>
+            <?php endif; ?>
             <form action="register_process.php" method="POST" onsubmit="validateForm(event)">
                 <div class="input-group">
                     <label for="username">Username</label>

@@ -20,12 +20,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $dao = new Dao();
-    if ($dao->registerUser($username, $email, $hashed_password)) {
-        header("Location: login.html?success=account_created");
+
+    if ($dao->usernameExists($username)) {
+        header("Location: register.php?error=username_exists");
         exit();
     } else {
-        header("Location: register.php?error=account_creation_failed");
-        exit();
+        if ($dao->registerUser($username, $email, $hashed_password)) {
+            header("Location: login.php?success=account_created");
+            exit();
+        } else {
+            header("Location: register.php?error=account_creation_failed");
+            exit();
+        }
     }
 } else {
     header("Location: register.php");
